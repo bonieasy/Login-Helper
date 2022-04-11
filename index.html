@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login-Helper</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
     <script src="./js/index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/e89c132772.js" crossorigin="anonymous" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
 
 
 </head>
@@ -43,9 +46,7 @@
             <section class="links-container">
                 <span>Ou entre com:</span>
                 <aside>
-                    <a href="#"><i class="fa-brands fa-google google"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f facebook"></i></a>
+                    <div id="buttonDiv"></div>
                 </aside>
             </section>
 

@@ -14,7 +14,28 @@ function showPassword() {
     }
 };
 
-document.getElementById('btn-login').addEventListener('click', function(e) {
-    e.preventDefault();
-    alert('Logado!');
-} );
+function handleCredentialResponse(response) {
+    const data = jwt_decode(response.credential)
+    console.log(data)
+  }
+  window.onload = function () {
+
+    google.accounts.id.initialize({
+      client_id: "421333481114-iptv0fm5p8kcns3m4ug2lg1ubo5dlvs0.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById("buttonDiv"), {
+            theme: "filled_blue",
+            size: "large",
+            type: "standard",
+            shape: "pill",
+            text: "$ {button.text}",
+            size: "large",
+            logo_alignment: "left"
+        }
+        );
+
+    google.accounts.id.prompt(); // also display the One Tap dialog
+  }
